@@ -1,0 +1,191 @@
+@charset "UTF-8";
+
+@import url('https://fonts.googleapis.com/css2?family=Montserrat:wght@500;700&display=swap');
+@import url('https://fonts.googleapis.com/css2?family=Fraunces:opsz,wght@9..144,700&display=swap');
+
+
+:root {
+    /* Colors */
+    /* Primary */
+    --darkCyan: hsl(158, 36%, 37%);
+    --cream: hsl(30, 38%, 92%);
+
+    /* Neutral */
+    --veryDarkBlue: hsl(212, 21%, 14%);
+    --darkGrayishBlue: hsl(228, 12%, 48%);
+    --white: hsl(0, 0%, 100%);
+
+    /* Font Family*/
+    --fontPrimary: 'Montserrat', sans-serif;
+    --fontSecundary: 'Fraunces', serif;
+
+    /* Font size*/
+    --fontSize: 14px;
+}
+
+* {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+}
+
+body {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    min-height: 100vh;
+    flex-direction: column;
+    font-family: var(--fontPrimary);
+    font-size: var(--fontSize);
+    background-color: var(--cream);
+    color: var(--darkGrayishBlue);
+}
+
+section#card_sale {
+    display: flex;
+    width: 640px;
+    height: 480px;
+    background-color: var(--white);
+    border-radius: 10px;
+}
+
+section#card_sale div#content {
+    text-align: left;
+    width: 320px;
+    padding: 2.4em;
+}
+
+div#content p#perfume {
+    text-transform: uppercase;
+    letter-spacing: .3em;
+}
+
+div#content h1 {
+    font-family: var(--fontSecundary);
+    font-size: 240%;
+    color: #000;
+    line-height: .98em;
+    margin: .7em 0 1em 0;
+}
+
+p#phrase {
+    margin-top: -.5em;
+    line-height: 1.8em;
+    padding-right: .5em;
+}
+
+div.image {
+    width: 320px;
+    height: 100%;
+}
+
+img {
+    width: 100%;
+    height: 100%;
+    border-top-left-radius: 10px;
+    border-end-start-radius: 10px;
+}
+
+div#content {
+    width: 100%;
+    height: 100%;
+}
+
+p#value {
+    display: flex;
+    justify-content: left;
+    align-items: center;
+    margin-top: 1.85em;
+}
+
+span#currentValue {
+    font-family: var(--fontSecundary);
+    font-size: 250%;
+    color: var(--darkCyan);
+}
+
+span#previousValue {
+    margin-left: 1.3em;
+}
+
+button#btn_buy {
+    position: relative;
+    cursor: pointer;
+    border: none;
+    outline: none;
+    background-color: var(--darkCyan);
+    color: var(--white);
+    padding: 1.9em 5em;
+    border-radius: .6em;
+    font-family: var(--fontPrimary);
+    font-weight: 700;
+    font-weight: bold;
+    width: 100%;
+    margin: 2em auto;
+}
+
+button#btn_buy::before {
+    content: "Add to Cart";
+    position: absolute;
+    top: 50%;
+    right: 5.5em;
+    transform: translateY(-50%);
+}
+
+button#btn_buy:focus {
+    background-color: var(--veryDarkBlue);
+}
+
+button#btn_buy img {
+    position: absolute;
+    top: 50%;
+    left: 5em;
+    transform: translateY(-50%);
+    width: 25px;
+    height: 25px;
+}
+
+@media (max-width: 664px) {
+    section#card_sale {
+        display: block;
+        width: 340px;
+        height: auto;
+    }
+
+    section#card_sale div#content {
+        padding: 2.4em 0 2.4em 2.4em;
+    }
+
+    div.image {
+        width: 100%;
+    }
+
+    img {
+        border-radius: 0;
+        border-top-left-radius: 10px;
+        border-top-right-radius: 10px;
+        width: 100%;
+    }
+
+    div#content p#perfume {
+        margin-top: -.5em;
+    }
+
+    div#content h1 {
+        margin-top: .5em;
+        font-size: 230%;
+    }
+
+    p#phrase {
+        margin-top: -1.4em;
+    }
+
+    button#btn_buy {
+        margin-top: 1.5em;
+        margin-bottom: -.5em;
+    }
+
+    button#btn_buy::before {
+        right: 7em;
+    }
+}
